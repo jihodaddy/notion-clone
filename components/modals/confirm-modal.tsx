@@ -18,7 +18,10 @@ interface IConfirmModalProps {
   onConfirm:() => void
 }
 
-export function ConfirmModal ({children,onConfirm}:IConfirmModalProps) {
+export function ConfirmModal ({
+  children,
+  onConfirm
+}:IConfirmModalProps) {
 
   const handleConfirm = (e:React.MouseEvent<HTMLButtonElement,MouseEvent>) => {
     e.stopPropagation()

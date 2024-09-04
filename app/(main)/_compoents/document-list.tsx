@@ -29,15 +29,15 @@ export default function DocumentList ({
       ...prevExpanded,
       [documentId]:!prevExpanded[documentId]
     }))
-  }
+  };
 
   const documents = useQuery(api.documents.getSidebar,{
     parentDocument:parentDocumentId
-  })
+  });
 
   const onRedirect = (documentId:string) => {
     router.push(`/documents/${documentId}`)
-  }
+  };
 
   if (documents === undefined) {
     return (
@@ -76,8 +76,9 @@ export default function DocumentList ({
           expanded={expanded[document._id]}/>
           {expanded[document._id] && (
             <DocumentList
-            parentDocumentId={document._id}
-            level={level + 1}/>
+              parentDocumentId={document._id}
+              level={level + 1}
+            />
           )}
         </div>
       ))}

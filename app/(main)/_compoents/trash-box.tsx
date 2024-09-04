@@ -30,28 +30,26 @@ export default function TrashBox () {
   }
 
   const onRestore = (event:React.MouseEvent<HTMLDivElement,MouseEvent>,documentId:Id<'documents'>) => {
-    event.stopPropagation()
-
-    const promise = restore({id:documentId})
+    event.stopPropagation();
+    const promise = restore({ id:documentId });
 
     toast.promise(promise,{
       loading:'Restoring note...',
       success:'Note restored!',
       error:'Failed to restore note'
-    })
-  }
+    });
+  };
 
   const onRemove = (documentId:Id<'documents'>) => {
-
-    const promise = remove({id:documentId})
+    const promise = remove({ id:documentId });
 
     toast.promise(promise,{
       loading:'Deleting note...',
       success:'Note deleted!',
       error:'Failed to delete note'
-    })
+    });
     if (params.documentId  === documentId) {
-      router.push('/documents')
+      router.push('/documents');
     }
   }
 
@@ -67,9 +65,12 @@ export default function TrashBox () {
     <div className="text-sm">
       <div className="flex items-center gap-x-1 p-2">
         <Search className="w-4 h-4"/>
-        <Input className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
-          value={search} onChange={e => setSearch(e.target.value)}
-          placeholder="Filter by page title..."/>
+        <Input 
+          className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
+          value={search} 
+          onChange={e => setSearch(e.target.value)}
+          placeholder="Filter by page title..."
+        />
       </div>
       <div className="mt-2 px-1 pb-1">
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
@@ -87,9 +88,14 @@ export default function TrashBox () {
               dark:hover:bg-neutral-600" onClick={e => onRestore(e,document._id)}>
                 <Undo className="w-4 h-4 text-muted-foreground"/>
               </div>
-              <ConfirmModal onConfirm={() => onRemove(document._id)}>
-                <div className="rounded-sm p-2 hover:bg-neutral-200
-                dark:hover:bg-neutral-600" role="button">
+              <ConfirmModal 
+                onConfirm={() => onRemove(document._id)}
+              >
+                <div 
+                  role="button"
+                  className="rounded-sm p-2 hover:bg-neutral-200
+                dark:hover:bg-neutral-600" 
+                >
                 <Trash className="w-4 h-4 text-muted-foreground"/>
                 </div>
               </ConfirmModal>
