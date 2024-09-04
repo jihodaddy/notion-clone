@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import * as React from 'react';
 import { ArrowRight } from 'lucide-react'
-import { useConvexAuth } from 'convex/react';
+import { Authenticated, AuthLoading, Unauthenticated, useConvexAuth } from 'convex/react';
 import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
 import { Spinner } from '@/components/spinner';
 import Link from 'next/link';
@@ -21,33 +21,29 @@ export default function Heading () {
         Yestion is the connected workspace where <br />
         better, faster work happens.
       </h3>
-      {isLoading && (
+      <AuthLoading>
         <div className='w-full flex items-center justify-center'>
           <Spinner size={'lg'}/>
         </div>
-      )}
-      {!isLoading && (
-        <>
-          <SignedIn>
-            <Button asChild>
-              <Link
-                href={'/documents'}
-              >
-                Enter Yestion
-                <ArrowRight className='h-4 w-4 ml-2'/>
-              </Link>
+      </AuthLoading>
+        <Authenticated>
+          <Button asChild>
+            <Link
+              href={'/documents'}
+            >
+              Enter Yestion
+              <ArrowRight className='h-4 w-4 ml-2'/>
+            </Link>
+          </Button>
+        </Authenticated>
+        <Unauthenticated>
+          <SignInButton mode='modal'>
+            <Button>
+              Get Yestion free
+              <ArrowRight className='h-4 w-4 ml-2'/>
             </Button>
-          </SignedIn>
-          <SignedOut>
-            <SignInButton mode='modal'>
-              <Button>
-                Get Yestion free
-                <ArrowRight className='h-4 w-4 ml-2'/>
-              </Button>
-            </SignInButton>
-          </SignedOut>
-        </>
-      )}
+          </SignInButton>
+        </Unauthenticated>
     </div>
   );
 }

@@ -10,12 +10,14 @@ export default function Heroes () {
             src='/documents.png'
             fill
             className='object-contain dark:hidden'
+            sizes='(max-width:400px) 300px (max-height:400px) 300px'
             alt='Documents'
           />
           <Image 
             src='/documents-dark.png'
             fill
             className='object-contain hidden dark:block'
+            sizes='(max-width:400px) 300px (max-height:400px) 300px'
             alt='Documents'
           />
         </div>
@@ -24,12 +26,14 @@ export default function Heroes () {
               src='/reading.png'
               fill
               className='object-contain dark:hidden'
+              sizes='(max-width:400px) 300px (max-height:400px) 300px'
               alt='Documents'
             />
           <Image 
               src='/reading.png'
               fill
               className='object-contain hidden dark:block'
+              sizes='(max-width:400px) 300px (max-height:400px) 300px'
               alt='Documents'
             />
         </div>
