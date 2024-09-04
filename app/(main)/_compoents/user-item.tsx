@@ -17,7 +17,7 @@ export default function UserItem() {
               <AvatarImage src={user?.imageUrl}/>
             </Avatar>
               <span className="text-start font-medium line-clamp-1">
-                {user?.firstName}&apos;s Jotion
+                {user?.firstName}&apos;s Yestion
               </span>
           </div>
           <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground w-4 h-4"/>
