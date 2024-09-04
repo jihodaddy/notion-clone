@@ -84,8 +84,10 @@ export default function TrashBox () {
               {document.title}
             </span>
             <div className="flex items-center">
-              <div className="rounded-sm p-2 hover:bg-neutral-200 
-              dark:hover:bg-neutral-600" onClick={e => onRestore(e,document._id)}>
+              <div 
+                className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600" 
+                onClick={e => onRestore(e,document._id)}
+              >
                 <Undo className="w-4 h-4 text-muted-foreground"/>
               </div>
               <ConfirmModal 
