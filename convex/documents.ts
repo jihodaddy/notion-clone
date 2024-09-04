@@ -251,29 +251,29 @@ export const getSearch = query({
 export const getById = query({
   args:{documentId:v.id('documents')},
   handler:async (context,args) => {
-    const identity = await context.auth.getUserIdentity()
+    const identity = await context.auth.getUserIdentity();
 
-    const document = await context.db.get(args.documentId)
+    const document = await context.db.get(args.documentId);
 
     if (!document) {
-      throw new Error("Not found")
+      throw new Error("Not found");
     }
 
     if (document.isPublished && !document.isArchived) {
-      return document
+      return document;
     }
 
     if (!identity) {
-      throw new Error("Not authenticated")
+      throw new Error("Not authenticated");
     }
 
-    const userId = identity.subject
+    const userId = identity.subject;
 
     if (document.userId !== userId)  {
-      throw new Error("Unauthorized")
+      throw new Error("Unauthorized");
     }
     
-    return document
+    return document;
   }
 })
 
@@ -288,31 +288,31 @@ export const update = mutation({
     isPublished:v.optional(v.boolean())
   },
   handler:async (context,args) => {
-    const identity = await context.auth.getUserIdentity()
+    const identity = await context.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Unauthenticated")
+      throw new Error("Unauthenticated");
     }
 
-    const userId = identity.subject
+    const userId = identity.subject;
 
-    const {id,...rest} = args
+    const {id,...rest} = args;
 
-    const existingDocument = await context.db.get(args.id)
+    const existingDocument = await context.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found")
+      throw new Error("Not found");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error('Unauthorized')
+      throw new Error('Unauthorized');
     }
 
     const document = await context.db.patch(args.id,{
       ...rest
-    })
+    });
 
-    return document
+    return document;
   }
 })
 
@@ -320,29 +320,29 @@ export const update = mutation({
 export const removeIcon = mutation({
   args:{id:v.id('documents')},
   handler:async (context,args) => {
-    const identity = await context.auth.getUserIdentity()
+    const identity = await context.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Unauthenticated")
+      throw new Error("Unauthenticated");
     }
 
-    const userId = identity.subject
+    const userId = identity.subject;
 
-     const existingDocument = await context.db.get(args.id)
+    const existingDocument = await context.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error('Not found')
+      throw new Error('Not found');
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized")
+      throw new Error("Unauthorized");
     }
 
     const document = await context.db.patch(args.id,{
       icon:undefined
     })
 
-    return document
+    return document;
   } 
 })
 
