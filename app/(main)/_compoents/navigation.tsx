@@ -13,8 +13,8 @@ import { toast } from "sonner";
 import DocumentList from "./document-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import TrashBox from "./trash-box";
-import { useSearch } from "@/hook/use-search";
-import { useSettings } from "@/hook/use-settings";
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 import Navbar from "./navbar";
 
 export default function Navigation() {

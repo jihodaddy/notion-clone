@@ -8,7 +8,7 @@ import { useUser } from "@clerk/clerk-react";
 
 import * as React from 'react';
 import { api } from "@/convex/_generated/api";
-import { useSearch } from "@/hook/use-search";
+import { useSearch } from "@/hooks/use-search";
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "./ui/command";
 
 export default function SearchCommand () {

@@ -11,7 +11,7 @@ import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"
 import { useEdgeStore } from "@/lib/edgestore"
 import { Skeleton } from "@/components//ui/skeleton"
-import { useCoverImage } from "@/hook/use-cover-image"
+import { useCoverImage } from "@/hooks/use-cover-image"
 
 export interface ICoverProps {
   url?:string

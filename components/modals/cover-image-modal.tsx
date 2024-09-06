@@ -1,6 +1,6 @@
 'use client';
 
-import { useCoverImage } from '@/hook/use-cover-image';
+import { useCoverImage } from '@/hooks/use-cover-image';
 import * as React from 'react';
 import { Dialog, DialogContent, DialogHeader } from '../ui/dialog';
 import { SingleImageDropzone } from '../single-image-dropzone';

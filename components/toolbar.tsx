@@ -5,7 +5,7 @@ import * as React from 'react';
 import IconPicker from './icon-picker';
 import { Button } from '@/components/ui/button';
 import { ImageIcon, Smile, X } from 'lucide-react';
-import { useCoverImage } from '@/hook/use-cover-image';
+import { useCoverImage } from '@/hooks/use-cover-image';
 import { useState } from 'react';
 import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
