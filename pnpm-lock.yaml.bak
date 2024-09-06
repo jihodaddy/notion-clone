@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@blocknote/core':
-    specifier: ^0.15.6
-    version: 0.15.6
+    specifier: ^0.15.7
+    version: 0.15.7
   '@blocknote/mantine':
-    specifier: ^0.15.6
-    version: 0.15.6(@tiptap/pm@2.6.6)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
+    specifier: ^0.15.7
+    version: 0.15.7(@tiptap/pm@2.6.6)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
   '@blocknote/react':
-    specifier: ^0.15.6
-    version: 0.15.6(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0)
+    specifier: ^0.15.7
+    version: 0.15.7(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0)
   '@clerk/clerk-react':
     specifier: ^5.5.0
     version: 5.5.0(react-dom@18.0.0)(react@18.0.0)
@@ -784,8 +784,8 @@ packages:
       regenerator-runtime: 0.14.1
     dev: false
 
-  /@blocknote/core@0.15.6:
-    resolution: {integrity: sha512-eNpohYtIDCGpKoCKtK2gGOeEl4sGX7jBl/8hX0OJINEGi1LtbWYEWNToRBDwBt9Uq2MW/PqG3iRuJ2oTcfTuZw==}
+  /@blocknote/core@0.15.7:
+    resolution: {integrity: sha512-qhDe2bUkr/dRPiJxoo26eS5A5T+1sUDVBvQ33Mhua8qb7gT/ccOQ96SsI1sJitj/wgQYmgWG11o7V/WYRYa8wA==}
     dependencies:
       '@emoji-mart/data': 1.2.1
       '@tiptap/core': 2.6.6(@tiptap/pm@2.6.6)
@@ -832,14 +832,14 @@ packages:
       - supports-color
     dev: false
 
-  /@blocknote/mantine@0.15.6(@tiptap/pm@2.6.6)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0):
-    resolution: {integrity: sha512-m3uvYnrA2RK78XvdYDHylcn6j8UwKdtlGUfVo/ALkU/Nb8EDj5CdFbU3OCY5HxX37kegKDrtsgLqrn1gflxkWQ==}
+  /@blocknote/mantine@0.15.7(@tiptap/pm@2.6.6)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0):
+    resolution: {integrity: sha512-66AstkivAZGeqktrnZ7ZU0Tg4JNu8sCmPEl1cJ9o1QZaIbGGt6t7T5efttrchlEZeE7IIlFc509NauhcvEvlDw==}
     peerDependencies:
       react: ^18
       react-dom: ^18
     dependencies:
-      '@blocknote/core': 0.15.6
-      '@blocknote/react': 0.15.6(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0)
+      '@blocknote/core': 0.15.7
+      '@blocknote/react': 0.15.7(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0)
       '@mantine/core': 7.12.2(@mantine/hooks@7.12.2)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
       '@mantine/hooks': 7.12.2(react@18.0.0)
       '@mantine/utils': 6.0.22(react@18.0.0)
@@ -852,13 +852,13 @@ packages:
       - supports-color
     dev: false
 
-  /@blocknote/react@0.15.6(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0):
-    resolution: {integrity: sha512-/zptJbinp7UwC0M9a5tEka4sNDoHij6qMAfearcmk36md3S55hDtbjcJyBr6Bq3yKxTaxesMdTwQJ3rZ/G7McA==}
+  /@blocknote/react@0.15.7(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0):
+    resolution: {integrity: sha512-N1FpR9on8ifsd21bFznI1WMwa2LLF4N0oenemL1kmpywa0ujOj5isAy6HNP1pnKjoOXklMk91kViVpqAyWHFrQ==}
     peerDependencies:
       react: ^18
       react-dom: ^18
     dependencies:
-      '@blocknote/core': 0.15.6
+      '@blocknote/core': 0.15.7
       '@floating-ui/react': 0.26.23(react-dom@18.0.0)(react@18.0.0)
       '@tiptap/core': 2.6.6(@tiptap/pm@2.6.6)
       '@tiptap/react': 2.6.6(@tiptap/core@2.6.6)(@tiptap/pm@2.6.6)(react-dom@18.0.0)(react@18.0.0)

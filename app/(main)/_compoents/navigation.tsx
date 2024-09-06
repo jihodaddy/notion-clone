@@ -1,21 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { api } from "@/convex/_generated/api";
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 import { cn } from "@/lib/utils";
+import { useMutation } from "convex/react";
 import { ChevronsLeft, MenuIcon, PlusCircle, PlusIcon, SearchIcon, SettingsIcon, TrashIcon } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
-import UserItem from "./user-item";
-import { useMutation, useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import Item from "./item";
 import { toast } from "sonner";
+import { useMediaQuery } from "usehooks-ts";
 import DocumentList from "./document-list";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import TrashBox from "./trash-box";
-import { useSearch } from "@/hooks/use-search";
-import { useSettings } from "@/hooks/use-settings";
+import Item from "./item";
 import Navbar from "./navbar";
+import TrashBox from "./trash-box";
+import UserItem from "./user-item";
 
 export default function Navigation() {
   const search = useSearch();
@@ -29,20 +30,21 @@ export default function Navigation() {
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
   const navbarRef = useRef<ElementRef<"div">>(null);
+  
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     if (isMobile) {
-      collapse()
+      collapse();
     } else {
-      resetWidth()
+      resetWidth();
     }
   },[isMobile])
 
   useEffect(() => {
     if (isMobile) {
-      collapse()
+      collapse();
     }
   },[pathname,isMobile])
 

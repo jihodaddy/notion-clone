@@ -1,9 +1,9 @@
 'use client'
 
 import { useEdgeStore } from '@/lib/edgestore';
-import { BlockNoteEditor, PartialBlock } from '@blocknote/core';
 import '@blocknote/core/style.css';
 import "@blocknote/mantine/style.css";
+import { BlockNoteEditor, PartialBlock } from '@blocknote/core';
 import { useCreateBlockNote } from '@blocknote/react'
 import { BlockNoteView } from "@blocknote/mantine";
 import { useTheme } from 'next-themes';
@@ -35,13 +35,11 @@ export default function Editor ({
   });
   
   return (
-    <div>
-      <BlockNoteView
-        editor={editor}
-        editable={editable}
-        onChange={()=> onChange(JSON.stringify(editor.topLevelBlocks,null,2))}
-        theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
-      />
-    </div>
+    <BlockNoteView
+      editor={editor}
+      editable={editable}
+      onChange={()=> onChange(JSON.stringify(editor.topLevelBlocks,null,2))}
+      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+    />
   );
 }
