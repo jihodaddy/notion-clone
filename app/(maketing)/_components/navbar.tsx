@@ -30,7 +30,7 @@ return (
             </SignInButton>
               <SignInButton mode="modal">
               <Button  size='sm'>
-                Get Joshion free
+                Get Yesion free
               </Button>
             </SignInButton>
           </>
